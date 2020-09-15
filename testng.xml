@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan department" parallel="tests" thread-count = "10">  <!-- parallel running of 10 cases at once-->
+
+	<listeners>
+		<listener class-name="test.Listeners"/>
+	</listeners>
+
+	<parameter name="URL" value="MobileAutomation_JavaTestNG.com/dummy"/>
+
+
+  <test thread-count="5" name="Personal Loan">
+    <parameter name="URL" value="Personal_Loan.com/dummy"/>
+    	
+    <classes>
+      <class name="test.TestNG_day1"/>
+      <class name="test.TestNG_day2"/>
+  
+    </classes>
+   </test>
+    
+  	<test name = "Car Loan"> 
+  	<parameter name="URL" value="Car_Loan.com/dummy"/>
+  		
+  	<classes>
+  		<class name='test.TestNg_day3'>
+  			<methods>
+  				<exclude name="API.*"/>
+ <!-- 		To exclude those test cases that names start by "API. "
+ -->
+  			</methods>
+  		</class>
+  	</classes>
+   </test>
+
+
+    
+  	<test name = "Home Loan"> 
+  	<parameter name="URL" value="Home_Loan.com/dummy"/>
+  		<parameter name="APIKey/username" value="123456"/>
+  	<classes>
+  		<class name='test.TestNg_day4'>
+  			<methods>
+  				<include name="LogInAPIHOMELoan"/>		
+<!-- 		To include the only test cases that named above
+ -->			
+  			</methods>
+  		</class>
+  		
+  	</classes>
+   </test>
+   
+</suite> 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan department">
+
+
+  <test name="Regression">
+  		<groups>
+  			<run>
+  				<include name="Smoke"/>
+ <!-- 	This is XML file to only run test cases tagged "Smoke".
+ 		This way to create "Smoke" and "Regression" packs.
+ 		Also    <exclude name="Smoke"/>.
+ -->
+  			</run>
+  		</groups>
+    <classes>
+      <class name="test.TestNG_day1"/>
+      <class name="test.TestNG_day2"/>
+  	  <class name="test.TestNg_day3"/>
+  	  <class name="test.TestNg_day4"/>
+    </classes>
+   </test>
+   
+</suite> 
